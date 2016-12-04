@@ -42,11 +42,11 @@ def readFile():
 	return lines.split('\n')
 
 
-def findCode(content, keypad, part):
+def findCode(content, keypad, part, x, y):
 	button = ''
 	code = ''
-	startX = 2
-	startY = 2
+	startX = x
+	startY = y
 	for instruction in content:
 		for move in instruction:
 			if move == 'L':
@@ -68,5 +68,5 @@ def findCode(content, keypad, part):
 
 if __name__ == '__main__':
 	content = readFile()
-	findCode(content, keypadPart1, "Part 1 : ")
-	findCode(content, keypadPart2, "Part 2 : ")
+	findCode(content, keypadPart1, "Part 1 : ", 2, 2)
+	findCode(content, keypadPart2, "Part 2 : ", 1, 3)
